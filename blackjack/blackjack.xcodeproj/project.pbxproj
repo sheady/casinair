@@ -20,6 +20,8 @@
 		E286641918B93B71005A7D24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28663FB18B93B71005A7D24 /* UIKit.framework */; };
 		E286642118B93B71005A7D24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E286641F18B93B71005A7D24 /* InfoPlist.strings */; };
 		E286642318B93B71005A7D24 /* blackjackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E286642218B93B71005A7D24 /* blackjackTests.m */; };
+		E286643718B93DF3005A7D24 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E286643618B93DF3005A7D24 /* Card.m */; };
+		E286652318B94455005A7D24 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = E286652218B94455005A7D24 /* Network.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		E286641E18B93B71005A7D24 /* blackjackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "blackjackTests-Info.plist"; sourceTree = "<group>"; };
 		E286642018B93B71005A7D24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E286642218B93B71005A7D24 /* blackjackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = blackjackTests.m; sourceTree = "<group>"; };
+		E286643518B93DF3005A7D24 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		E286643618B93DF3005A7D24 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		E286652118B94455005A7D24 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		E286652218B94455005A7D24 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +116,7 @@
 		E28663FD18B93B71005A7D24 /* blackjack */ = {
 			isa = PBXGroup;
 			children = (
-				E286640618B93B71005A7D24 /* AppDelegate.h */,
-				E286640718B93B71005A7D24 /* AppDelegate.m */,
-				E286640C18B93B71005A7D24 /* ViewController.h */,
-				E286640D18B93B71005A7D24 /* ViewController.m */,
+				E286643418B93DAA005A7D24 /* classes */,
 				E286640F18B93B71005A7D24 /* Images.xcassets */,
 				E28663FE18B93B71005A7D24 /* Supporting Files */,
 			);
@@ -147,6 +150,45 @@
 				E286641F18B93B71005A7D24 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E286643218B93D80005A7D24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E286643518B93DF3005A7D24 /* Card.h */,
+				E286643618B93DF3005A7D24 /* Card.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E286643318B93D8F005A7D24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E286640C18B93B71005A7D24 /* ViewController.h */,
+				E286640D18B93B71005A7D24 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E286643418B93DAA005A7D24 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				E286640618B93B71005A7D24 /* AppDelegate.h */,
+				E286640718B93B71005A7D24 /* AppDelegate.m */,
+				E286652418B9445A005A7D24 /* Utilities */,
+				E286643218B93D80005A7D24 /* Model */,
+				E286643318B93D8F005A7D24 /* Controller */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
+		E286652418B9445A005A7D24 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E286652118B94455005A7D24 /* Network.h */,
+				E286652218B94455005A7D24 /* Network.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E286640E18B93B71005A7D24 /* ViewController.m in Sources */,
+				E286652318B94455005A7D24 /* Network.m in Sources */,
 				E286640818B93B71005A7D24 /* AppDelegate.m in Sources */,
 				E286640418B93B71005A7D24 /* main.m in Sources */,
+				E286643718B93DF3005A7D24 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
