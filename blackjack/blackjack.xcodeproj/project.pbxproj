@@ -13,7 +13,7 @@
 		E286640218B93B71005A7D24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E286640018B93B71005A7D24 /* InfoPlist.strings */; };
 		E286640418B93B71005A7D24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E286640318B93B71005A7D24 /* main.m */; };
 		E286640818B93B71005A7D24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E286640718B93B71005A7D24 /* AppDelegate.m */; };
-		E286640E18B93B71005A7D24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E286640D18B93B71005A7D24 /* ViewController.m */; };
+		E286640E18B93B71005A7D24 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E286640D18B93B71005A7D24 /* MainViewController.m */; };
 		E286641018B93B71005A7D24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E286640F18B93B71005A7D24 /* Images.xcassets */; };
 		E286641718B93B71005A7D24 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E286641618B93B71005A7D24 /* XCTest.framework */; };
 		E286641818B93B71005A7D24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28663F718B93B71005A7D24 /* Foundation.framework */; };
@@ -22,6 +22,11 @@
 		E286642318B93B71005A7D24 /* blackjackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E286642218B93B71005A7D24 /* blackjackTests.m */; };
 		E286643718B93DF3005A7D24 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E286643618B93DF3005A7D24 /* Card.m */; };
 		E286652318B94455005A7D24 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = E286652218B94455005A7D24 /* Network.m */; };
+		E286652A18B94604005A7D24 /* club.png in Resources */ = {isa = PBXBuildFile; fileRef = E286652618B94604005A7D24 /* club.png */; };
+		E286652B18B94604005A7D24 /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = E286652718B94604005A7D24 /* diamond.png */; };
+		E286652C18B94604005A7D24 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = E286652818B94604005A7D24 /* heart.png */; };
+		E286652D18B94604005A7D24 /* spade.png in Resources */ = {isa = PBXBuildFile; fileRef = E286652918B94604005A7D24 /* spade.png */; };
+		E286652F18B94B32005A7D24 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E286652E18B94B32005A7D24 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +50,8 @@
 		E286640518B93B71005A7D24 /* blackjack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "blackjack-Prefix.pch"; sourceTree = "<group>"; };
 		E286640618B93B71005A7D24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E286640718B93B71005A7D24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E286640C18B93B71005A7D24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E286640D18B93B71005A7D24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E286640C18B93B71005A7D24 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E286640D18B93B71005A7D24 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E286640F18B93B71005A7D24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E286641518B93B71005A7D24 /* blackjackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E286641618B93B71005A7D24 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,6 +62,11 @@
 		E286643618B93DF3005A7D24 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		E286652118B94455005A7D24 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		E286652218B94455005A7D24 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		E286652618B94604005A7D24 /* club.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = club.png; sourceTree = "<group>"; };
+		E286652718B94604005A7D24 /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
+		E286652818B94604005A7D24 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		E286652918B94604005A7D24 /* spade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spade.png; sourceTree = "<group>"; };
+		E286652E18B94B32005A7D24 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 				E286643418B93DAA005A7D24 /* classes */,
 				E286640F18B93B71005A7D24 /* Images.xcassets */,
 				E28663FE18B93B71005A7D24 /* Supporting Files */,
+				E286652E18B94B32005A7D24 /* Storyboard.storyboard */,
 			);
 			path = blackjack;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 		E28663FE18B93B71005A7D24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E286652518B945F2005A7D24 /* images */,
 				E28663FF18B93B71005A7D24 /* blackjack-Info.plist */,
 				E286640018B93B71005A7D24 /* InfoPlist.strings */,
 				E286640318B93B71005A7D24 /* main.m */,
@@ -164,8 +176,8 @@
 		E286643318B93D8F005A7D24 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E286640C18B93B71005A7D24 /* ViewController.h */,
-				E286640D18B93B71005A7D24 /* ViewController.m */,
+				E286640C18B93B71005A7D24 /* MainViewController.h */,
+				E286640D18B93B71005A7D24 /* MainViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -189,6 +201,17 @@
 				E286652218B94455005A7D24 /* Network.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E286652518B945F2005A7D24 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E286652618B94604005A7D24 /* club.png */,
+				E286652718B94604005A7D24 /* diamond.png */,
+				E286652818B94604005A7D24 /* heart.png */,
+				E286652918B94604005A7D24 /* spade.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E286641018B93B71005A7D24 /* Images.xcassets in Resources */,
+				E286652D18B94604005A7D24 /* spade.png in Resources */,
 				E286640218B93B71005A7D24 /* InfoPlist.strings in Resources */,
+				E286652C18B94604005A7D24 /* heart.png in Resources */,
+				E286652B18B94604005A7D24 /* diamond.png in Resources */,
+				E286652F18B94B32005A7D24 /* Storyboard.storyboard in Resources */,
+				E286652A18B94604005A7D24 /* club.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E286640E18B93B71005A7D24 /* ViewController.m in Sources */,
+				E286640E18B93B71005A7D24 /* MainViewController.m in Sources */,
 				E286652318B94455005A7D24 /* Network.m in Sources */,
 				E286640818B93B71005A7D24 /* AppDelegate.m in Sources */,
 				E286640418B93B71005A7D24 /* main.m in Sources */,

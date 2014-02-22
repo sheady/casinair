@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Card.h"
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
 @end
