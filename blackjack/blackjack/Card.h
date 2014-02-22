@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+enum {
+    kSpade,
+    kClub,
+    kHeart,
+    kDiamond
+};
 
 @interface Card : NSObject
+
+@property BOOL shown;
+@property (strong, nonatomic) UIView *cardView;
+
+- (id)initWithSuit:(int)suit Num:(int)num origin:(CGPoint)origin;
 
 @end
