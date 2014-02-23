@@ -9,24 +9,24 @@
 #import <Foundation/Foundation.h>
 #import "SocketIO.h"
 
-@protocol NetworkManager;
+@protocol NetworkManagerProtocol;
 
 @interface NetworkManager : NSObject <SocketIODelegate>
 {
     SocketIO *socketIO;
 }
 
-@property (nonatomic, weak) id<NetworkManager> delegate;
+@property (nonatomic, weak) id<NetworkManagerProtocol> delegate;
 
 -(id)init;
 @end
 
-@protocol MyProtocolName <NSObject>
+@protocol NetworkManagerProtocol <NSObject>
 
 @required
--(BOOL)turnDidChange:(int)player;
--(BOOL)cardDidArrive:(int)player:(int)suit:(int)num;
--(BOOL)turnDidEnd;
--(BOOL)gameDidEnd:(int)winner;
+- (void)turnDidChange:(int)player;
+- (void)cardDidArrive:(int)player :(int)suit :(int)num;
+- (void)turnDidEnd;
+- (void)gameDidEnd:(int)winner;
 
 @end

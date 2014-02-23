@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Card.h"
+#import "NetworkManager.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <NetworkManagerProtocol>
 
 @end
