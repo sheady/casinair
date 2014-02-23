@@ -40,8 +40,8 @@
     
     if ([packet.name isEqualToString:@"connected"])
     {
-        NSString *s = [packet.args objectAtIndex:0];
-        self.identification = [[s substringFromIndex:s.length-1] integerValue];
+        NSDictionary *d = [packet.args objectAtIndex:0];
+        self.identification = [[d objectForKey:@"id"] integerValue];
     }
     else if ([packet.name isEqualToString:@"error"])
     {
@@ -49,8 +49,8 @@
     }
     else if ([packet.name isEqualToString:@"startTurn"])
     {
-        NSString *s = [packet.args objectAtIndex:0];
-        NSInteger i = [[s substringFromIndex:s.length-1] integerValue];
+        NSDictionary *d = [packet.args objectAtIndex:0];
+        NSInteger i = [[d objectForKey:@"id"] integerValue];
         
         switch (i) {
             case 0:
@@ -72,12 +72,12 @@
     }
     else if ([packet.name isEqualToString:@"hit"])
     {
-        NSString *iden = [packet.args objectAtIndex:0];
-        NSString *su = [packet.args objectAtIndex:1];
-        NSString *val = [packet.args objectAtIndex:2];
-        NSInteger i = [[iden substringFromIndex:iden.length-1] integerValue];
-        NSInteger suit = [[su substringFromIndex:su.length-1] integerValue];
-        NSInteger value = [[val substringFromIndex:val.length-2] integerValue];
+        NSDictionary *iden = [packet.args objectAtIndex:0];
+        NSDictionary *su = [packet.args objectAtIndex:1];
+        NSDictionary *val = [packet.args objectAtIndex:2];
+        NSInteger i = [[iden valueForKey:@"id"] integerValue];
+        NSInteger suit = [[su valueForKey:@"suit"] integerValue];
+        NSInteger value = [[val valueForKey:@"value"] integerValue];
         
         switch (i) {
             case 0:
@@ -103,8 +103,8 @@
     }
     else if ([packet.name isEqualToString:@"gameOver"])
     {
-        NSString *s = [packet.args objectAtIndex:0];
-        NSInteger i = [[s substringFromIndex:s.length-1] integerValue];
+        NSDictionary *d = [packet.args objectAtIndex:0];
+        NSInteger i = [[d objectForKey:@"id"] integerValue];
         
         switch (i) {
             case 0:
