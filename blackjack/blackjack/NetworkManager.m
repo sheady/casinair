@@ -73,9 +73,6 @@
     else if ([packet.name isEqualToString:@"hit"])
     {
         NSDictionary *args = [packet.args objectAtIndex:0];
-//        NSDictionary *iden = [packet.args objectAtIndex:0];
-//        NSDictionary *su = [packet.args objectAtIndex:1];
-//        NSDictionary *val = [packet.args objectAtIndex:2];
         NSInteger i = [[args valueForKey:@"id"] integerValue];
         NSInteger suit = [[args valueForKey:@"suit"] integerValue];
         NSInteger value = [[args valueForKey:@"value"] integerValue];

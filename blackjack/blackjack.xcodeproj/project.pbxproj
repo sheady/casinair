@@ -40,6 +40,8 @@
 		E286652C18B94604005A7D24 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = E286652818B94604005A7D24 /* heart.png */; };
 		E286652D18B94604005A7D24 /* spade.png in Resources */ = {isa = PBXBuildFile; fileRef = E286652918B94604005A7D24 /* spade.png */; };
 		E286652F18B94B32005A7D24 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E286652E18B94B32005A7D24 /* Storyboard.storyboard */; };
+		E286653918BA54A1005A7D24 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = E286653818BA54A1005A7D24 /* back.png */; };
+		E286653B18BA564E005A7D24 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E286653A18BA564E005A7D24 /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		E286652818B94604005A7D24 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		E286652918B94604005A7D24 /* spade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spade.png; sourceTree = "<group>"; };
 		E286652E18B94B32005A7D24 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		E286653818BA54A1005A7D24 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		E286653A18BA564E005A7D24 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +282,8 @@
 		E286652518B945F2005A7D24 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E286653A18BA564E005A7D24 /* background.png */,
+				E286653818BA54A1005A7D24 /* back.png */,
 				E286652618B94604005A7D24 /* club.png */,
 				E286652718B94604005A7D24 /* diamond.png */,
 				E286652818B94604005A7D24 /* heart.png */,
@@ -365,8 +371,10 @@
 				E286652D18B94604005A7D24 /* spade.png in Resources */,
 				E286640218B93B71005A7D24 /* InfoPlist.strings in Resources */,
 				E286652C18B94604005A7D24 /* heart.png in Resources */,
+				E286653918BA54A1005A7D24 /* back.png in Resources */,
 				E286652B18B94604005A7D24 /* diamond.png in Resources */,
 				E286652F18B94B32005A7D24 /* Storyboard.storyboard in Resources */,
+				E286653B18BA564E005A7D24 /* background.png in Resources */,
 				E286652A18B94604005A7D24 /* club.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

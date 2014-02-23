@@ -14,6 +14,7 @@
 
 @interface MainViewController ()
 
+@property (strong, nonatomic) UIImageView *image;
 @property (strong, nonatomic) NSMutableArray *dealer;
 @property (strong, nonatomic) NSMutableArray *hand1;
 @property (strong, nonatomic) NSMutableArray *hand2;
@@ -33,10 +34,14 @@
     self.dealer = [[NSMutableArray alloc] init];
     self.hand1 = [[NSMutableArray alloc] init];
     self.hand2 = [[NSMutableArray alloc] init];
+    self.image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    [self.image setImage:[UIImage imageNamed:@"background"]];
+    
     
     self.hit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.hit setFrame:CGRectMake(50, 525, 50, 20)];
     [self.hit setTitle:@"hit" forState:UIControlStateNormal];
+    [self.hit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.hit addTarget:self action:@selector(didPressHit) forControlEvents:UIControlEventTouchUpInside];
     [self.hit setEnabled:NO];
     [self.hit setHidden:YES];
@@ -45,20 +50,23 @@
     self.stand = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.stand setFrame:CGRectMake(200, 525, 50, 20)];
     [self.stand setTitle:@"stand" forState:UIControlStateNormal];
+    [self.stand setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.stand addTarget:self action:@selector(didPressStand) forControlEvents:UIControlEventTouchUpInside];
     [self.stand setEnabled:NO];
     [self.stand setHidden:YES];
     [self.stand setAlpha:0];
     
     self.reset = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.reset setFrame:CGRectMake(50, 525, 50, 20)];
+    [self.reset setFrame:CGRectMake(20, 525, 50, 20)];
     [self.reset setTitle:@"reset" forState:UIControlStateNormal];
+    [self.reset setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.reset addTarget:self action:@selector(didPressReset) forControlEvents:UIControlEventTouchUpInside];
     [self.reset setEnabled:NO];
     [self.reset setHidden:YES];
     [self.reset setAlpha:0];
     
-    self.turnLabel = [[UILabel alloc] initWithFrame:CGRectMake(135, 525, 50, 20)];
+    self.turnLabel = [[UILabel alloc] initWithFrame:CGRectMake(85, 525, 150, 20)];
+    [self.turnLabel setTextColor:[UIColor whiteColor]];
     
     self.manager = [[NetworkManager alloc] init];
     self.manager.delegate = self;
@@ -68,6 +76,7 @@
 
 - (void)initializeHands
 {
+    [self.view addSubview:self.image];
     [self.view addSubview:self.hit];
     [self.view addSubview:self.stand];
     [self.view addSubview:self.reset];
@@ -90,13 +99,12 @@
 - (void)addCardDealerSuit:(int)suit Num:(int)num origin:(CGPoint)origin
 {
     [self.dealer addObject:[self createCardSuit:suit Num:num origin:origin]];
-    [self updateFieldFor:self.dealer];
 }
 
 - (void)addCardP1Suit:(int)suit Num:(int)num origin:(CGPoint)origin
 {
     [self.hand1 addObject:[self createCardSuit:suit Num:num origin:origin]];
-    [self updateFieldFor:self.hand1];
+    
 }
 
 - (void)addCardP2Suit:(int)suit Num:(int)num origin:(CGPoint)origin
@@ -159,19 +167,29 @@
         case 0:
             if ([self.dealer count] == 0) {
                 [self addCardDealerSuit:suit Num:num origin:CGPointMake(5, dealerY)];
+                Card *card = [self.dealer objectAtIndex:0];
+                UIImageView *Iview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back"]];
+                [card.cardView addSubview:Iview];
+                [self updateFieldFor:self.dealer];
             }
             else {
                 Card *prev = [self.dealer lastObject];
                 [self addCardDealerSuit:suit Num:num origin:CGPointMake(prev.cardView.frame.origin.x + 50, dealerY)];
+                [self updateFieldFor:self.dealer];
             }
             break;
         case 1:
             if ([self.hand1 count] == 0) {
                 [self addCardP1Suit:suit Num:num origin:CGPointMake(5, hand1Y)];
+                Card *card = [self.hand1 objectAtIndex:0];
+                UIImageView *Iview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back"]];
+                [card.cardView addSubview:Iview];
+                [self updateFieldFor:self.hand1];
             }
             else {
                 Card *prev = [self.hand1 lastObject];
                 [self addCardP1Suit:suit Num:num origin:CGPointMake(prev.cardView.frame.origin.x + 50, hand1Y)];
+                [self updateFieldFor:self.hand1];
             }
             break;
         case 2:
@@ -202,6 +220,10 @@
 
 - (void)gameDidEnd:(int)winner
 {
+    Card *card = [self.hand1 objectAtIndex:0];
+    [[[card.cardView subviews] lastObject] removeFromSuperview];
+    Card *card1 = [self.dealer objectAtIndex:0];
+    [[[card1.cardView subviews] lastObject] removeFromSuperview];
     switch (winner) {
         case 0:
             [self.turnLabel setText:@"Dealer Won"];
@@ -231,6 +253,7 @@
 {
     [UIView animateWithDuration:.5 animations:^{
         [self.reset setAlpha:0];
+        [self.turnLabel setText:@""];
     }completion:^(BOOL finished) {
         [self.reset setEnabled:NO];
         [self.reset setHidden:YES];
@@ -244,6 +267,11 @@
 
         [self.manager reset];
     }];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end
