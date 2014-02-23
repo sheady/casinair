@@ -15,7 +15,7 @@
 {
     self = [super init];
     socketIO = [[SocketIO alloc] initWithDelegate:self];
-    [socketIO connectToHost:@"192.168.8.101" onPort:8080];
+    [socketIO connectToHost:@"192.168.8.104" onPort:8080];
     return self;
 }
 
@@ -72,12 +72,13 @@
     }
     else if ([packet.name isEqualToString:@"hit"])
     {
-        NSDictionary *iden = [packet.args objectAtIndex:0];
-        NSDictionary *su = [packet.args objectAtIndex:1];
-        NSDictionary *val = [packet.args objectAtIndex:2];
-        NSInteger i = [[iden valueForKey:@"id"] integerValue];
-        NSInteger suit = [[su valueForKey:@"suit"] integerValue];
-        NSInteger value = [[val valueForKey:@"value"] integerValue];
+        NSDictionary *args = [packet.args objectAtIndex:0];
+//        NSDictionary *iden = [packet.args objectAtIndex:0];
+//        NSDictionary *su = [packet.args objectAtIndex:1];
+//        NSDictionary *val = [packet.args objectAtIndex:2];
+        NSInteger i = [[args valueForKey:@"id"] integerValue];
+        NSInteger suit = [[args valueForKey:@"suit"] integerValue];
+        NSInteger value = [[args valueForKey:@"value"] integerValue];
         
         switch (i) {
             case 0:
