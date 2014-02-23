@@ -51,7 +51,7 @@
     [self.stand setAlpha:0];
     
     self.reset = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.reset setFrame:CGRectMake(135, 525, 50, 20)];
+    [self.reset setFrame:CGRectMake(50, 525, 50, 20)];
     [self.reset setTitle:@"reset" forState:UIControlStateNormal];
     [self.reset addTarget:self action:@selector(didPressReset) forControlEvents:UIControlEventTouchUpInside];
     [self.reset setEnabled:NO];
@@ -123,13 +123,12 @@
 
 - (void)didPressHit
 {
-    Card *prev = [self.hand2 lastObject];
-    [self addCardP2Suit:kSpade Num:5 origin:CGPointMake(prev.cardView.frame.origin.x + 50, hand2Y)];
+    [self.manager hit];
 }
 
 - (void)didPressStand
 {
-    
+    [self.manager stand];
 }
 
 - (void)turnDidChange:(int)player
@@ -242,6 +241,8 @@
         [self.hand1 removeAllObjects];
         [self.hand2 removeAllObjects];
         [self initializeHands];
+
+        [self.manager reset];
     }];
 }
 

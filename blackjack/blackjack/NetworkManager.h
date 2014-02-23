@@ -27,9 +27,9 @@
 @protocol NetworkManagerProtocol <NSObject>
 
 @required
-- turnDidChange:(int)player;
-- cardDidArrive:(int)player :(int)suit :(int)num;
-- turnDidEnd;
-- gameDidEnd:(int)winner;
+- (void)turnDidChange:(int)player;
+- (void)cardDidArrive:(int)player :(int)suit :(int)num;
+- (void)turnDidEnd;
+- (void)gameDidEnd:(int)winner;
 
 @end
