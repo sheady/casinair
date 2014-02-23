@@ -157,7 +157,7 @@
 {
     switch (player) {
         case 0:
-            if ([self.dealer objectAtIndex:0] != nil) {
+            if ([self.dealer count] == 0) {
                 [self addCardDealerSuit:suit Num:num origin:CGPointMake(5, dealerY)];
             }
             else {
@@ -166,7 +166,7 @@
             }
             break;
         case 1:
-            if ([self.hand1 objectAtIndex:0] != nil) {
+            if ([self.hand1 count] == 0) {
                 [self addCardP1Suit:suit Num:num origin:CGPointMake(5, hand1Y)];
             }
             else {
@@ -175,7 +175,7 @@
             }
             break;
         case 2:
-            if ([self.hand2 objectAtIndex:0] != nil) {
+            if ([self.hand2 count] == 0) {
                 [self addCardP2Suit:suit Num:num origin:CGPointMake(5, hand2Y)];
             }
             else {
