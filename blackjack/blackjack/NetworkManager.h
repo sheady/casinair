@@ -17,6 +17,7 @@
 }
 
 @property (nonatomic, weak) id<NetworkManagerProtocol> delegate;
+@property (nonatomic) NSInteger identification;
 
 - (id)init;
 - (void)hit;
