@@ -31,6 +31,21 @@
     self.hand1 = [[NSMutableArray alloc] init];
     self.hand2 = [[NSMutableArray alloc] init];
     
+    self.hit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.hit setFrame:CGRectMake(50, 525, 50, 40)];
+    [self.hit setTitle:@"hit" forState:UIControlStateNormal];
+    [self.hit addTarget:self action:@selector(didPressHit) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.stand = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.stand setFrame:CGRectMake(200, 525, 50, 40)];
+    [self.stand setTitle:@"stand" forState:UIControlStateNormal];
+    [self.stand addTarget:self action:@selector(didPressStand) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self initializeHands];
+}
+
+- (void)initializeHands
+{
     [self addCardDealerSuit:kClub Num:1 origin:CGPointMake(5, dealerY)];
     [self addCardDealerSuit:kHeart Num:11 origin:CGPointMake(55, dealerY)];
     
@@ -40,15 +55,7 @@
     [self addCardP2Suit:kSpade Num:13 origin:CGPointMake(5, hand2Y)];
     [self addCardP2Suit:kHeart Num:11 origin:CGPointMake(55, hand2Y)];
     
-    self.hit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.hit setFrame:CGRectMake(50, 525, 50, 40)];
-    [self.hit setTitle:@"hit" forState:UIControlStateNormal];
-    [self.hit addTarget:self action:@selector(didPressHit) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.hit];
-    
-    self.stand = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.stand setFrame:CGRectMake(200, 525, 50, 40)];
-    [self.stand setTitle:@"stand" forState:UIControlStateNormal];
     [self.view addSubview:self.stand];
 }
 
@@ -104,5 +111,18 @@
     Card *prev = [self.hand2 lastObject];
     [self addCardP2Suit:kSpade Num:5 origin:CGPointMake(prev.cardView.frame.origin.x + 50, hand2Y)];
 }
+
+- (void)didPressStand
+{
+    for (UIView *view in [self.view subviews]) {
+        [view removeFromSuperview];
+    }
+    [self.dealer removeAllObjects];
+    [self.hand1 removeAllObjects];
+    [self.hand2 removeAllObjects];
+    [self initializeHands];
+}
+
+
 
 @end
