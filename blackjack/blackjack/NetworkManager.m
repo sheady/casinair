@@ -42,7 +42,7 @@
         // do something with response
         NSLog(@"ack arrived: %@", response);
     };
-    [socketIO sendMessage:@"hello back!"];
+//    [socketIO sendMessage:@""];
 }
 
 - (void) socketIO:(SocketIO *)socket onError:(NSError *)error
