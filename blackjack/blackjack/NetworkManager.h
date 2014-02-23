@@ -18,15 +18,18 @@
 
 @property (nonatomic, weak) id<NetworkManagerProtocol> delegate;
 
--(id)init;
+- (id)init;
+- (void)hit;
+- (void)stand;
+- (void)reset;
 @end
 
 @protocol NetworkManagerProtocol <NSObject>
 
 @required
-- (void)turnDidChange:(int)player;
-- (void)cardDidArrive:(int)player :(int)suit :(int)num;
-- (void)turnDidEnd;
-- (void)gameDidEnd:(int)winner;
+- turnDidChange:(int)player;
+- cardDidArrive:(int)player :(int)suit :(int)num;
+- turnDidEnd;
+- gameDidEnd:(int)winner;
 
 @end
