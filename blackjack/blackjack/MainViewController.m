@@ -205,20 +205,20 @@
     switch (winner) {
         case 0:
             [self.turnLabel setText:@"Dealer Won"];
-            [self reset];
+            [self ready2reset];
             break;
         case 1:
             [self.turnLabel setText:@"Player 1 Won"];
-            [self reset];
+            [self ready2reset];
             break;
         case 2:
             [self.turnLabel setText:@"You Won"];
-            [self reset];
+            [self ready2reset];
             break;
     }
 }
 
-- (void)reset
+- (void)ready2reset
 {
     [UIView animateWithDuration:.5 animations:^{
         [self.reset setEnabled:YES];
